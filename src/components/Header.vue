@@ -49,7 +49,11 @@
             "
           >
             <span class="sr-only">Open menu</span>
-            <MenuIcon class="h-6 w-6" aria-hidden="true" />
+            <MenuIcon
+              class="h-6 w-6"
+              :class="scrollPosition > 80 ? 'text-red-600' : ''"
+              aria-hidden="true"
+            />
           </PopoverButton>
         </div>
         <PopoverGroup as="nav" class="hidden md:flex space-x-10">
