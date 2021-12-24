@@ -31,7 +31,7 @@
           mt-4
         "
       >
-        © 2020
+        © {{ new Date().getFullYear() }}
       </p>
       <span
         class="
