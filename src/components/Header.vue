@@ -196,7 +196,7 @@
           <div class="py-6 px-5 space-y-6">
             <div>
               <a
-                href="#"
+                @click="accept(close), goToElement('order')"
                 class="
                   w-full
                   flex
@@ -214,7 +214,7 @@
                   hover:bg-red-900
                 "
               >
-                Sign up
+                Ordenar
               </a>
             </div>
           </div>
