@@ -2,6 +2,7 @@
   <Popover
     class="sticky top-0 z-10"
     :class="scrollPosition > 80 ? 'bg-red-600' : 'bg-white'"
+    v-slot="{ open }"
   >
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div
@@ -114,7 +115,7 @@
     </div>
 
     <transition
-      enter-active-class="duration-200 ease-out"
+      enter-active-class="duration-100 ease-out"
       enter-from-class="opacity-0 scale-95"
       enter-to-class="opacity-100 scale-100"
       leave-active-class="duration-100 ease-in"
@@ -122,6 +123,7 @@
       leave-to-class="opacity-0 scale-95"
     >
       <PopoverPanel
+        v-slot="{ close }"
         focus
         class="
           absolute
@@ -172,10 +174,11 @@
             </div>
             <div class="mt-6">
               <nav class="grid gap-y-8">
-                <a
+                <router-link
                   v-for="item in solutions"
+                  @click="accept(close)"
                   :key="item.name"
-                  :href="item.href"
+                  :to="item.to"
                   class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
                 >
                   <component
@@ -186,7 +189,7 @@
                   <span class="ml-3 text-base font-medium text-gray-900">
                     {{ item.name }}
                   </span>
-                </a>
+                </router-link>
               </nav>
             </div>
           </div>
@@ -230,8 +233,8 @@ import {
   PopoverPanel,
 } from "@headlessui/vue";
 import {
-  ChartBarIcon,
-  CursorClickIcon,
+  HomeIcon,
+  UserGroupIcon,
   MenuIcon,
   XIcon,
 } from "@heroicons/vue/outline";
@@ -241,14 +244,14 @@ const solutions = [
     name: "Inicio",
     description:
       "Get a better understanding of where your traffic is coming from.",
-    href: "#",
-    icon: ChartBarIcon,
+    to: "/",
+    icon: HomeIcon,
   },
   {
     name: "Nosotros",
     description: "Speak directly to your customers in a more meaningful way.",
-    href: "#",
-    icon: CursorClickIcon,
+    to: "/about",
+    icon: UserGroupIcon,
   },
 ];
 
@@ -268,4 +271,8 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener("scroll", updateScroll);
 });
+
+function accept(close) {
+  close();
+}
 </script>
