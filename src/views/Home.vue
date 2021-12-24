@@ -1,4 +1,30 @@
 <template>
+  <section>
+    <Carousel :itemsToShow="3" :autoplay="3000" :wrap-around="true">
+      <Slide v-for="slide in slides" :key="slide.id">
+        <div class="flex flex-wrap justify-center">
+          <div class="h-2/5 w-auto px-4">
+            <img
+              :src="slide.imgSrc"
+              alt="fotos"
+              class="
+                shadow-lg
+                rounded
+                max-w-full
+                h-auto
+                align-middle
+                border-none
+              "
+            />
+          </div>
+        </div>
+      </Slide>
+      <template #addons>
+        <Navigation />
+        <Pagination />
+      </template>
+    </Carousel>
+  </section>
   <section class="text-gray-600 body-font overflow-hidden">
     <div class="container px-5 py-12 mx-auto">
       <div class="lg:w-4/5 mx-auto flex flex-wrap items-center">
@@ -40,7 +66,7 @@
       </div>
     </div>
   </section>
-  <section>
+  <section id="order" class="scroll-mt-20">
     <div class="py-24 mx-auto flex justify-center bg-red-600">
       <div
         class="
@@ -53,7 +79,10 @@
           relative
           z-4
           shadow-md
-          w-1/2
+          md:w-1/2
+          w-full
+          mx-4
+          md:mx-0
         "
       >
         <h2 class="text-gray-900 text-lg mb-1 font-medium title-font">
@@ -139,8 +168,14 @@
   </section>
 </template>
 
-<script>
-export default {};
-</script>
+<script setup>
+import "vue3-carousel/dist/carousel.css";
+import { Carousel, Navigation, Slide, Pagination } from "vue3-carousel";
 
-<style></style>
+const slides = [
+  { id: 0, imgSrc: new URL("../assets/0.jpeg", import.meta.url).href },
+  { id: 1, imgSrc: new URL("../assets/1.jpeg", import.meta.url).href },
+  { id: 2, imgSrc: new URL("../assets/2.jpeg", import.meta.url).href },
+  { id: 3, imgSrc: new URL("../assets/3.jpeg", import.meta.url).href },
+];
+</script>

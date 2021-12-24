@@ -79,7 +79,7 @@
         </PopoverGroup>
         <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
           <a
-            href="#"
+            @click="goToElement('order')"
             class="
               ml-8
               whitespace-nowrap
@@ -90,7 +90,7 @@
               py-2
               border border-transparent
               rounded-md
-              shadow-sm
+              shadow-lg
               text-base
               font-medium
               ease-in-out
@@ -99,8 +99,8 @@
             "
             :class="
               scrollPosition > 80
-                ? 'text-red-600 bg-white hover:bg-red-900'
-                : 'text-white bg-red-600 hover:bg-red-900'
+                ? 'text-red-600 bg-white hover:bg-red-200'
+                : 'text-white bg-red-600 hover:bg-red-200'
             "
           >
             Ordenar
@@ -252,6 +252,11 @@ let scrollPosition = ref(0);
 
 function updateScroll() {
   scrollPosition.value = window.scrollY;
+}
+
+function goToElement(element) {
+  let target = document.getElementById(element);
+  target.scrollIntoView({ behavior: "smooth" });
 }
 onMounted(() => {
   window.addEventListener("scroll", updateScroll);
