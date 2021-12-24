@@ -32,8 +32,16 @@
           mt-4
         "
       >
-        © {{ new Date().getFullYear() }}
+        © {{ new Date().getFullYear() }} by
       </p>
+      <a
+        class="flex ml-2"
+        href="https://jose-vega.netlify.app/"
+        target="_blank"
+      >
+        <CodeIcon class="h-6 w-6 text-teal-600" aria-hidden="true" />
+        <span class="text-teal-600 ml-2 font-semibold">Heka</span>
+      </a>
       <span
         class="
           inline-flex
@@ -79,6 +87,7 @@
 </template>
 
 <script setup>
+import { CodeIcon } from "@heroicons/vue/outline";
 function scrollToTop() {
   window.scrollTo({
     top: 0,

@@ -20,9 +20,9 @@
             <span class="sr-only">Picaflor</span>
             <img
               class="
-                h-8
+                h-12
                 w-auto
-                sm:h-12
+                sm:h-14
                 ease-in-out
                 duration-300
                 hover:scale-125
