@@ -5,7 +5,7 @@
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"
-          class="inline-block w-8 h-8 text-gray-400 mb-8"
+          class="inline-block w-8 h-8 text-red-500 mb-8"
           viewBox="0 0 975.036 975.036"
         >
           <path
