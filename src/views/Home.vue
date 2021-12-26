@@ -29,6 +29,9 @@
     <div class="container px-5 py-12 mx-auto">
       <div class="lg:w-4/5 mx-auto flex flex-wrap items-center">
         <img
+          data-aos="zoom-in"
+          data-aos-easing="ease-in-out"
+          data-aos-delay="50"
           alt="chile"
           class="
             lg:w-1/2
