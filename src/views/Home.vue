@@ -103,6 +103,7 @@
             id="email"
             name="email"
             class="
+              caret-red-500
               w-full
               bg-white
               rounded
@@ -128,6 +129,7 @@
             id="message"
             name="message"
             class="
+              caret-red-500
               w-full
               bg-white
               rounded

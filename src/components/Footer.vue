@@ -16,7 +16,14 @@
         "
       >
         <img
-          class="h-10 w-auto hover:scale-125 ease-in-out duration-300"
+          class="
+            h-10
+            w-auto
+            hover:scale-125
+            ease-in-out
+            duration-300
+            animate-pulse
+          "
           src="../assets/logo.png"
           alt="logo"
         />
